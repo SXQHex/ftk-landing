@@ -1,0 +1,15 @@
+@use "../../scss/abstracts/mixins" as m;
+
+.c-atelier {
+  @include m.container;
+}
+
+.c-atelier__head {
+  max-width: 42rem;
+  margin-bottom: var(--space-lg);
+}
+
+.c-atelier__grid {
+  @include m.auto-grid(16rem);
+}
+

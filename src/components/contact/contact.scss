@@ -1,0 +1,106 @@
+@use "../../scss/abstracts/mixins" as m;
+
+.c-contact {
+  @include m.container;
+}
+
+.c-contact__layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.c-contact__list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+  color: var(--c-text-primary);
+}
+
+.c-contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.c-contact__details {
+  @include m.card-surface;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.c-contact__phones {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.c-contact__phones a {
+  color: var(--c-accent-400);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.c-contact__phones a:is(:hover, :focus-visible) {
+  text-decoration: underline;
+}
+
+.c-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.c-form__row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.c-form__label {
+  font-size: var(--fs-300);
+  color: var(--c-text-muted);
+}
+
+.c-form__input {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-border);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.85rem 1rem;
+  color: var(--c-text-primary);
+}
+
+.c-form__error {
+  min-height: 1rem;
+  font-size: var(--fs-300);
+  color: #ffb4b4;
+}
+
+.c-form__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-300);
+}
+
+.c-form__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--fs-300);
+  color: var(--c-text-muted);
+}
+
+.c-form__notice {
+  margin-top: var(--space-sm);
+  color: #c2f4d4;
+  font-size: var(--fs-300);
+}
+

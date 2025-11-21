@@ -1,0 +1,38 @@
+// src/scss/abstracts/_mixins.scss
+@use 'variables' as vars;
+
+@mixin focus-ring($color: rgba(200, 150, 90, 0.24), $offset: 3px) {
+  outline: 2px solid $color;
+  outline-offset: $offset;
+}
+
+@mixin container {
+  width: min(100% - 2rem, var(--container-inline));
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2.5rem);
+}
+
+@mixin respond-down {
+  @media (max-width: vars.$bp-medium) {
+    @content;
+  }
+}
+
+@mixin fluid-stack($gap: var(--space-md)) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin auto-grid($min: 16rem, $gap: var(--space-lg)) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+  gap: $gap;
+}
+
+@mixin card-surface {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}

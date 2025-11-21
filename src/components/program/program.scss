@@ -1,0 +1,15 @@
+@use "../../scss/abstracts/mixins" as m;
+
+.c-program {
+  @include m.container;
+}
+
+.c-program__head {
+  max-width: 40rem;
+  margin-bottom: var(--space-lg);
+}
+
+.c-program__grid {
+  @include m.auto-grid(18rem);
+}
+

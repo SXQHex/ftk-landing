@@ -1,0 +1,41 @@
+@use "../../scss/abstracts/mixins" as m;
+
+.c-content-card {
+  @include m.card-surface;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+}
+
+.c-content-card__eyebrow {
+  font-size: var(--fs-300);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--c-text-muted);
+}
+
+.c-content-card__title {
+  margin: 0;
+}
+
+.c-content-card__lead {
+  margin: 0;
+  color: var(--c-text-muted);
+}
+
+.c-content-card__list {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  color: var(--c-text-primary);
+  font-size: var(--fs-300);
+}
+
+.c-content-card--accent {
+  background: linear-gradient(150deg, rgba(184, 59, 43, 0.32), rgba(8, 8, 9, 0.92));
+  border-color: rgba(184, 59, 43, 0.4);
+}
+

@@ -1,0 +1,16 @@
+@use "../abstracts/mixins" as m;
+
+.l-shell {
+  @include m.container;
+}
+
+.l-section {
+  padding-block: clamp(3rem, 6vw, 5.5rem);
+}
+
+.l-section--muted {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+}
+

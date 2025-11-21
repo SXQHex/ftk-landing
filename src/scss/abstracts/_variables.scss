@@ -1,0 +1,39 @@
+$bp-medium: 60rem;
+
+:root {
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+
+  --c-bg-900: #050405;
+  --c-bg-800: #0e0a0b;
+  --c-surface: rgba(255, 255, 255, 0.02);
+  --c-border: rgba(255, 255, 255, 0.08);
+  --c-text-primary: #efe6e3;
+  --c-text-muted: #bca89f;
+  --c-accent-500: #b83b2b;
+  --c-accent-400: #c89a5b;
+
+  --space-xs: clamp(0.5rem, 1vw, 0.75rem);
+  --space-sm: clamp(0.75rem, 1.2vw, 1rem);
+  --space-md: clamp(1rem, 1.8vw, 1.5rem);
+  --space-lg: clamp(1.5rem, 3vw, 2.5rem);
+  --space-xl: clamp(2rem, 4vw, 3.5rem);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.5rem;
+
+  --fs-300: clamp(0.95rem, 1vw, 1.05rem);
+  --fs-400: clamp(1rem, 1.4vw, 1.2rem);
+  --fs-500: clamp(1.35rem, 2.4vw, 1.8rem);
+  --fs-600: clamp(2rem, 4vw, 3rem);
+  --fs-700: clamp(2.75rem, 5vw, 4rem);
+
+  --lh-tight: 1.15;
+  --lh-base: 1.6;
+
+  --container-inline: 72rem;
+
+  --transition-default: 220ms ease;
+  --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
+}

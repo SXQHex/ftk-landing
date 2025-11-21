@@ -1,0 +1,29 @@
+// src/scss/main.scss
+
+@use "abstracts/variables";
+@use "abstracts/mixins";
+
+@use "base/reset";
+@use "base/typography";
+@use "base/global";
+
+@use "layout/containers";
+@use "layout/grid";
+
+@use "pages/landing";
+@use "themes/default";
+@use "vendor/placeholder";
+
+@use "../components/button/button";
+@use "../components/content-card/content-card";
+@use "../components/header/header";
+@use "../components/hero/hero";
+@use "../components/program/program";
+@use "../components/atelier/atelier";
+@use "../components/contact/contact";
+@use "../components/modal/modal";
+@use "../components/footer/footer";
+
+@use "utilities/accessibility";
+@use "utilities/animations";
+@use "utilities/helpers";

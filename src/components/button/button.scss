@@ -1,0 +1,33 @@
+.c-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: var(--fs-400);
+  cursor: pointer;
+  transition:
+    transform var(--transition-default),
+    box-shadow var(--transition-default),
+    background var(--transition-default);
+}
+
+.c-button--primary {
+  background: linear-gradient(90deg, var(--c-accent-500), var(--c-accent-400));
+  color: #120605;
+  box-shadow: 0 8px 28px rgba(184, 59, 43, 0.22);
+}
+
+.c-button--ghost {
+  border-color: var(--c-border);
+  color: var(--c-text-primary);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.c-button:is(:hover, :focus-visible) {
+  transform: translateY(-2px);
+}
+

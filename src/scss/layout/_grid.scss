@@ -1,0 +1,14 @@
+@use "../abstracts/mixins" as m;
+
+.l-stack {
+  @include m.fluid-stack();
+}
+
+.l-grid-auto {
+  @include m.auto-grid();
+}
+
+.l-grid-auto--dense {
+  @include m.auto-grid(14rem);
+}
+

@@ -1,0 +1,23 @@
+{
+  "name": "fethiyetango-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview --port 5174",
+    "build": "npm run build:images && vite build",
+    "build:css": "sass src/scss/main.scss dist/css/main.css --style=compressed && postcss dist/css/main.css -o dist/css/main.min.css",
+    "build:images": "node build-scripts/build-images.js",
+    "clean": "rimraf dist/*"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "concurrently": "^9.2.1",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "rimraf": "^6.1.0",
+    "sass": "^1.94.1",
+    "sharp": "^0.34.3",
+    "vite": "^7.1.12"
+  }
+}

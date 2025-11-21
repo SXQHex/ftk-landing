@@ -1,0 +1,132 @@
+@use "../../scss/abstracts/mixins" as m;
+
+.c-header {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  background: rgba(6, 6, 7, 0.75);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.c-header__inner {
+  @include m.container;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-block: var(--space-sm);
+}
+
+.c-header__brand {
+  justify-self: center;
+  text-align: center;
+}
+
+.c-header__brand-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-400);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.c-header__brand-label {
+  font-size: var(--fs-300);
+  color: var(--c-text-muted);
+  letter-spacing: 0.2em;
+}
+
+.c-header__cta {
+  justify-self: end;
+  font-weight: 600;
+  color: var(--c-accent-400);
+}
+
+.c-nav__toggle {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-border);
+  background: rgba(255, 255, 255, 0.04);
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+  color: var(--c-text-primary);
+}
+
+.c-nav__toggle-line {
+  width: 1.2rem;
+  height: 2px;
+  border-radius: 99px;
+  background: currentColor;
+}
+
+.c-nav__panel {
+  display: flex;
+  gap: 1.5rem;
+  justify-self: end;
+}
+
+.c-nav__list {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.c-nav__link {
+  font-size: var(--fs-300);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+}
+
+.c-nav__link:is(:hover, :focus-visible) {
+  color: var(--c-text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@include m.respond-down {
+  .c-header__inner {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(3, auto);
+    gap: var(--space-xs);
+  }
+
+  .c-nav__panel {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(80vw, 320px);
+    padding: clamp(2rem, 6vw, 3rem) clamp(1.2rem, 4vw, 2rem);
+    flex-direction: column;
+    border-right: 1px solid var(--c-border);
+    background: rgba(5, 5, 6, 0.96);
+    transform: translateX(-100%);
+    transition: transform var(--transition-default);
+    z-index: 120;
+  }
+
+  .c-nav__panel[data-state="open"] {
+    transform: translateX(0);
+  }
+
+  .c-nav__list {
+    flex-direction: column;
+  }
+
+  .c-header__cta {
+    justify-self: end;
+  }
+
+  body.is-nav-open::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 80;
+  }
+}
+
