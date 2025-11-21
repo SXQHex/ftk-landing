@@ -42,6 +42,13 @@ export function initHeader(root = document) {
     if (event.matches) closeMenu();
   });
 
+  document.addEventListener('click', (event) => {
+      // Eğer tıklanan öğe panelin içinde değilse ve panel açıksa
+    if (!header.contains(event.target) && panel.dataset.state === 'open') {
+      closeMenu();
+    }
+  });
+
   setState(false);
 }
 

@@ -60,7 +60,7 @@
 .c-nav__toggle-line {
   width: 1.2rem;
   height: 2px;
-  border-radius: 99px;
+  border-radius: var(--radius-sm);
   background: currentColor;
 }
 
@@ -98,13 +98,15 @@
 
   .c-nav__panel {
     position: fixed;
-    inset: 0 auto 0 0;
-    width: min(80vw, 320px);
+    top: 0;                 // header’ın altından başlat
+    left: 0;
+    width: fit-content;
+    height: fit-content;
     padding: clamp(2rem, 6vw, 3rem) clamp(1.2rem, 4vw, 2rem);
     flex-direction: column;
     border-right: 1px solid var(--c-border);
     background: rgba(5, 5, 6, 0.96);
-    transform: translateX(-100%);
+    transform: translateX(-80%);
     transition: transform var(--transition-default);
     z-index: 120;
   }
