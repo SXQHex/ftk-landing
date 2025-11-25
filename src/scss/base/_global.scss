@@ -9,6 +9,8 @@ body {
     linear-gradient(180deg, var(--c-bg-800), #070506 140%);
   line-height: var(--lh-base);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; // MacOS için ek netlik
+  text-rendering: optimizeLegibility; // heading ve küçük metinlerde daha iyi kerning
 }
 
 a {
