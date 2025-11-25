@@ -77,9 +77,13 @@
 }
 
 .c-form__error {
-  min-height: 1rem;
+  display: none;        /* varsayılan olarak gizli */
   font-size: var(--fs-300);
   color: #ffb4b4;
+}
+
+.c-form__error.active {
+  display: block;       /* hata olduğunda görünür */
 }
 
 .c-form__checkbox {
@@ -102,5 +106,13 @@
   margin-top: var(--space-sm);
   color: #c2f4d4;
   font-size: var(--fs-300);
+}
+
+.c-form__note {
+  font-size: 0.85em;   /* daha küçük */
+  color: #666;         /* gri ton */
+  font-weight: normal;
+  display: block;
+  margin-top: 0.5em;
 }
 

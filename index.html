@@ -15,7 +15,7 @@
     />
     <!-- SEO: Title & Meta Description -->
     <title>Fethiye Tango Kulübü – Arjantin Tango kursu, milonga ve atölye</title>
-    <meta name="description" content="Fethiye’de Arjantin Tango dersleri, Milonga ve atölyeler. Deneme dersine katıl, WhatsApp’tan hızlıca rezervasyon yap.">
+    <meta name="description" content="Fethiye’de Arjantin Tango dersleri, Milonga ve workshop. Deneme dersine katıl, WhatsApp’tan hızlıca rezervasyon yap.">
     <link rel="canonical" href="https://fethiyetango.com">
   </head>
   <body data-page="landing">
@@ -225,18 +225,37 @@
                     info@fethiyetango.com
                   </a>
                 </div>
-                <form class="c-form" data-component="contact-form" aria-labelledby="contact-form-title" novalidate>
-                  <h3 class="u-visually-hidden" id="contact-form-title">İletişim formu</h3>
+                <form class="c-form" name="cta" method="POST" data-netlify="true" data-component="contact-form" novalidate>
+                  <!-- Netlify'nin formu algılaması için gizli input -->
+                  <input type="hidden" name="form-name" value="cta" />
+
+                  <h3 class="u-visually-hidden" id="contact-form-title">İletişim Formu</h3>
+
                   <div class="c-form__row">
-                    <label class="c-form__label" for="contact-name">Adınız</label>
+                    <label class="c-form__label" for="contact-name">Adınız ve Soyadınız</label>
                     <input class="c-form__input" id="contact-name" name="name" type="text" autocomplete="name" required />
                     <span class="c-form__error" data-error-for="name" aria-live="polite"></span>
                   </div>
+
+                  <div class="c-form__row">
+                    <label class="c-form__label" for="contact-phone">Telefon</label>
+                    <input
+                      class="c-form__input"
+                      id="contact-phone"
+                      name="phone"
+                      type="tel"
+                      autocomplete="tel"
+                      required
+                    />
+                    <span class="c-form__error" data-error-for="phone" aria-live="polite"></span>
+                  </div>
+
                   <div class="c-form__row">
                     <label class="c-form__label" for="contact-email">E-posta</label>
                     <input class="c-form__input" id="contact-email" name="email" type="email" autocomplete="email" required />
                     <span class="c-form__error" data-error-for="email" aria-live="polite"></span>
                   </div>
+
                   <div class="c-form__row">
                     <label class="c-form__label" for="contact-role">Deneyim düzeyi</label>
                     <select class="c-form__input" id="contact-role" name="role">
@@ -245,17 +264,25 @@
                       <option value="observer">Sadece izleyici</option>
                     </select>
                   </div>
+
                   <div class="c-form__row u-visually-hidden">
                     <label for="contact-website">Website</label>
                     <input id="contact-website" class="c-form__input" name="website" type="text" tabindex="-1" autocomplete="off" />
                   </div>
+
+                  <!-- ✅ KVKK bilgilendirme daha küçük ve gri -->
+                  <label class="c-form__label c-form__note" for="contact-kvkk">
+                    E-posta ve telefon bilgilerinizi yalnızca size dönüşler için kullanacağız
+                  </label>
+
                   <label class="c-form__checkbox">
                     <input type="checkbox" name="gdpr" required />
                     <span>İletişim izinlerini kabul ediyorum.</span>
                   </label>
+
                   <div class="c-form__foot">
                     <p>Yanıt süresi ortalama 12 saattir.</p>
-                    <button class="c-button c-button--primary" type="submit">Kaydı tamamla</button>
+                    <button class="c-button c-button--primary" type="submit">Kaydı Tamamla</button>
                   </div>
                 </form>
               </div>
@@ -314,61 +341,89 @@
     </div>
 
     <template id="modal-template">
-      <div class="c-modal__backdrop" data-modal="backdrop" role="presentation">
-        <div
-          class="c-modal"
-          data-modal="dialog"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="modal-title"
-          tabindex="-1"
-        >
-          <div class="c-modal__head">
-            <h2 id="modal-title">Deneme dersi formu</h2>
-            <button class="c-modal__close" type="button" data-modal-dismiss aria-label="Kapat">✕</button>
-          </div>
-          <form class="c-form" data-component="contact-form" novalidate>
-            <div class="c-form__row">
-              <label class="c-form__label" for="modal-name">Adınız</label>
-              <input class="c-form__input" id="modal-name" name="name" type="text" autocomplete="name" required />
-              <span class="c-form__error" data-error-for="name" aria-live="polite"></span>
-            </div>
-            <div class="c-form__row">
-              <label class="c-form__label" for="modal-email">E-posta</label>
-              <input
-                class="c-form__input"
-                id="modal-email"
-                name="email"
-                type="email"
-                autocomplete="email"
-                required
-              />
-              <span class="c-form__error" data-error-for="email" aria-live="polite"></span>
-            </div>
-            <div class="c-form__row">
-              <label class="c-form__label" for="modal-role">Deneyim düzeyi</label>
-              <select class="c-form__input" id="modal-role" name="role">
-                <option value="beginner">Başlangıç</option>
-                <option value="intermediate">İleri</option>
-                <option value="observer">Sadece izleyici</option>
-              </select>
-            </div>
-            <div class="c-form__row u-visually-hidden">
-              <label for="modal-website">Website</label>
-              <input id="modal-website" class="c-form__input" name="website" type="text" tabindex="-1" autocomplete="off" />
-            </div>
-            <label class="c-form__checkbox">
-              <input type="checkbox" name="gdpr" required />
-              <span>İletişim izinlerini kabul ediyorum.</span>
-            </label>
-            <div class="c-form__foot">
-              <p>Yanıt süresi ortalama 12 saattir.</p>
-              <button class="c-button c-button--primary" type="submit">Kaydı tamamla</button>
-            </div>
-          </form>
-        </div>
+  <div class="c-modal__backdrop" data-modal="backdrop" role="presentation">
+    <div
+      class="c-modal"
+      data-modal="dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      tabindex="-1"
+    >
+      <div class="c-modal__head">
+        <h2 id="modal-title">Deneme dersi formu</h2>
+        <button class="c-modal__close" type="button" data-modal-dismiss aria-label="Kapat">✕</button>
       </div>
-    </template>
+
+      <!-- ✅ Netlify Forms uyumlu form -->
+      <form class="c-form" name="trial-lesson" method="POST" data-netlify="true" data-component="contact-form" novalidate>
+        <!-- Netlify gizli input -->
+        <input type="hidden" name="form-name" value="trial-lesson" />
+
+        <div class="c-form__row">
+          <label class="c-form__label" for="modal-name">Adınız ve Soyadınız</label>
+          <input class="c-form__input" id="modal-name" name="name" type="text" autocomplete="name" required />
+          <span class="c-form__error" data-error-for="name" aria-live="polite"></span>
+        </div>
+
+        <div class="c-form__row">
+          <label class="c-form__label" for="modal-tel">Telefon</label>
+          <input
+            class="c-form__input"
+            id="modal-tel"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            required
+          />
+          <span class="c-form__error" data-error-for="phone" aria-live="polite"></span>
+        </div>
+
+        <div class="c-form__row">
+          <label class="c-form__label" for="modal-email">E-posta</label>
+          <input
+            class="c-form__input"
+            id="modal-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+          />
+          <span class="c-form__error" data-error-for="email" aria-live="polite"></span>
+        </div>
+
+        <div class="c-form__row">
+          <label class="c-form__label" for="modal-role">Deneyim düzeyi</label>
+          <select class="c-form__input" id="modal-role" name="role">
+            <option value="beginner">Başlangıç</option>
+            <option value="intermediate">İleri</option>
+            <option value="observer">Sadece izleyici</option>
+          </select>
+        </div>
+
+        <div class="c-form__row u-visually-hidden">
+          <label for="modal-website">Website</label>
+          <input id="modal-website" class="c-form__input" name="website" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <!-- ✅ KVKK bilgilendirme daha küçük ve gri -->
+        <label class="c-form__label c-form__note" for="modal-kvkk">
+          E-posta ve telefon bilgilerinizi yalnızca size dönüşler için kullanacağız
+        </label>  
+
+        <label class="c-form__checkbox">
+          <input type="checkbox" name="gdpr" required />
+          <span>İletişim izinlerini kabul ediyorum.</span>
+        </label>
+
+        <div class="c-form__foot">
+          <p>Yanıt süresi ortalama 12 saattir.</p>
+          <button class="c-button c-button--primary" type="submit">Kaydı tamamla</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>
 
     <script type="module" src="/src/js/main.js"></script>
   </body>
