@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="tr">
   <head> 
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+          'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-MS6D5LZQ');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -22,10 +33,14 @@
     <!-- Theme Colors for Mobile -->
     <meta name="theme-color" content="#b83b2b" />
     <meta name="background-color" content="#ffffff" />
-    <script type="module" crossorigin src="/assets/index-BGctc1Fu.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-PjOCSyVK.css">
+    <script type="module" crossorigin src="/assets/index-jyRy0UV4.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-mlB6NqGP.css">
   </head>
   <body data-page="landing">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MS6D5LZQ" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <a class="u-skip-link" href="#main-content">İçeriğe geç</a>
     <div class="page-shell">
       <header class="c-header" data-component="site-header">
@@ -35,6 +50,7 @@
             type="button"
             aria-controls="site-menu"
             aria-expanded="false"
+            aria-label="Ana menüyü aç/kapat"
             data-element="nav-toggle"
           >
             <span class="c-nav__toggle-line" aria-hidden="true"></span>
@@ -60,14 +76,16 @@
             id="site-menu"
             class="c-nav__panel"
             data-element="nav-panel"
+            aria-labelledby="site-menu-title"
             aria-label="Ana menü"
-            data-state="closed"
-          >
+            data-state="closed">  
+          <h2 id="site-menu-title" class="u-visually-hidden">Ana menü</h2>
+          
             <ul class="c-nav__list">
               <li><a class="c-nav__link" href="#hero" data-nav-link>Ana Sayfa</a></li>
               <li><a class="c-nav__link" href="#program" data-nav-link>Program</a></li>
               <li><a class="c-nav__link" href="#atolye" data-nav-link>Açık Atölye</a></li>
-              <li><a class="c-nav__link" href="/blog/" data-nav-link>Blog</a></li>
+              <li><a class="c-nav__link" href="/blog/index.html" data-nav-link>Blog</a></li>
               <li><a class="c-nav__link" href="#iletisim" data-nav-link>İletişim</a></li>
             </ul>
           </nav>
@@ -336,89 +354,89 @@
     </div>
 
     <template id="modal-template">
-  <div class="c-modal__backdrop" data-modal="backdrop" role="presentation">
-    <div
-      class="c-modal"
-      data-modal="dialog"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="modal-title"
-      tabindex="-1"
-    >
-      <div class="c-modal__head">
-        <h2 id="modal-title">Deneme dersi formu</h2>
-        <button class="c-modal__close" type="button" data-modal-dismiss aria-label="Kapat">✕</button>
+      <div class="c-modal__backdrop" data-modal="backdrop" role="presentation">
+        <div
+          class="c-modal"
+          data-modal="dialog"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+          tabindex="-1"
+        >
+          <div class="c-modal__head">
+            <h2 id="modal-title">Deneme dersi formu</h2>
+            <button class="c-modal__close" type="button" data-modal-dismiss aria-label="Kapat">✕</button>
+          </div>
+
+          <!-- ✅ Netlify Forms uyumlu form -->
+          <form class="c-form" name="trial-lesson" method="POST" data-netlify="true" data-component="contact-form" novalidate>
+            <!-- Netlify gizli input -->
+            <input type="hidden" name="form-name" value="trial-lesson" />
+
+            <div class="c-form__row">
+              <label class="c-form__label" for="modal-name">Adınız ve Soyadınız</label>
+              <input class="c-form__input" id="modal-name" name="name" type="text" autocomplete="name" required />
+              <span class="c-form__error" data-error-for="name" aria-live="polite"></span>
+            </div>
+
+            <div class="c-form__row">
+              <label class="c-form__label" for="modal-tel">Telefon</label>
+              <input
+                class="c-form__input"
+                id="modal-tel"
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                required
+              />
+              <span class="c-form__error" data-error-for="phone" aria-live="polite"></span>
+            </div>
+
+            <div class="c-form__row">
+              <label class="c-form__label" for="modal-email">E-posta</label>
+              <input
+                class="c-form__input"
+                id="modal-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+              />
+              <span class="c-form__error" data-error-for="email" aria-live="polite"></span>
+            </div>
+
+            <div class="c-form__row">
+              <label class="c-form__label" for="modal-role">Deneyim düzeyi</label>
+              <select class="c-form__input" id="modal-role" name="role">
+                <option value="beginner">Başlangıç</option>
+                <option value="intermediate">İleri</option>
+                <option value="observer">Sadece izleyici</option>
+              </select>
+            </div>
+
+            <div class="c-form__row u-visually-hidden">
+              <label for="modal-website">Website</label>
+              <input id="modal-website" class="c-form__input" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <!-- ✅ KVKK bilgilendirme daha küçük ve gri -->
+            <label class="c-form__label c-form__note" for="modal-kvkk">
+              E-posta ve telefon bilgilerinizi yalnızca size dönüşler için kullanacağız
+            </label>  
+
+            <label class="c-form__checkbox">
+              <input type="checkbox" name="gdpr" required />
+              <span>İletişim izinlerini kabul ediyorum.</span>
+            </label>
+
+            <div class="c-form__foot">
+              <p>Yanıt süresi ortalama 12 saattir.</p>
+              <button class="c-button c-button--primary" type="submit">Kaydı tamamla</button>
+            </div>
+          </form>
+        </div>
       </div>
-
-      <!-- ✅ Netlify Forms uyumlu form -->
-      <form class="c-form" name="trial-lesson" method="POST" data-netlify="true" data-component="contact-form" novalidate>
-        <!-- Netlify gizli input -->
-        <input type="hidden" name="form-name" value="trial-lesson" />
-
-        <div class="c-form__row">
-          <label class="c-form__label" for="modal-name">Adınız ve Soyadınız</label>
-          <input class="c-form__input" id="modal-name" name="name" type="text" autocomplete="name" required />
-          <span class="c-form__error" data-error-for="name" aria-live="polite"></span>
-        </div>
-
-        <div class="c-form__row">
-          <label class="c-form__label" for="modal-tel">Telefon</label>
-          <input
-            class="c-form__input"
-            id="modal-tel"
-            name="phone"
-            type="tel"
-            autocomplete="tel"
-            required
-          />
-          <span class="c-form__error" data-error-for="phone" aria-live="polite"></span>
-        </div>
-
-        <div class="c-form__row">
-          <label class="c-form__label" for="modal-email">E-posta</label>
-          <input
-            class="c-form__input"
-            id="modal-email"
-            name="email"
-            type="email"
-            autocomplete="email"
-            required
-          />
-          <span class="c-form__error" data-error-for="email" aria-live="polite"></span>
-        </div>
-
-        <div class="c-form__row">
-          <label class="c-form__label" for="modal-role">Deneyim düzeyi</label>
-          <select class="c-form__input" id="modal-role" name="role">
-            <option value="beginner">Başlangıç</option>
-            <option value="intermediate">İleri</option>
-            <option value="observer">Sadece izleyici</option>
-          </select>
-        </div>
-
-        <div class="c-form__row u-visually-hidden">
-          <label for="modal-website">Website</label>
-          <input id="modal-website" class="c-form__input" name="website" type="text" tabindex="-1" autocomplete="off" />
-        </div>
-
-        <!-- ✅ KVKK bilgilendirme daha küçük ve gri -->
-        <label class="c-form__label c-form__note" for="modal-kvkk">
-          E-posta ve telefon bilgilerinizi yalnızca size dönüşler için kullanacağız
-        </label>  
-
-        <label class="c-form__checkbox">
-          <input type="checkbox" name="gdpr" required />
-          <span>İletişim izinlerini kabul ediyorum.</span>
-        </label>
-
-        <div class="c-form__foot">
-          <p>Yanıt süresi ortalama 12 saattir.</p>
-          <button class="c-button c-button--primary" type="submit">Kaydı tamamla</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</template>
+    </template>
 
   </body>
 </html>
