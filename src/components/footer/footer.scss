@@ -20,4 +20,23 @@
   flex-direction: column;
   gap: 0.35rem;
 }
+.c-footer__contact {
+    margin-top: 1rem;
+    // Eğer footer'daki metinler sağa hizalanıyorsa, burayı ayarlayabilirsiniz.
+}
+
+.c-footer__whatsapp-link {
+    display: inline-block;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    
+    // WhatsApp linkini Footer'daki diğer metinlerden daha dikkat çekici yapalım.
+    // Varsayım: var(--c-accent-400) sitenizin vurgu rengidir (kırmızı/turuncu tonları)
+    color: var(--c-accent-400); 
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
 

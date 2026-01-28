@@ -7,3 +7,4 @@ export function initFooter(root = document) {
   }
 }
 
+

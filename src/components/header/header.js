@@ -17,6 +17,13 @@ export function initHeader(root = document) {
     panel.dataset.state = open ? 'open' : 'closed';
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     body.classList.toggle('is-nav-open', open);
+
+  if (open) {
+    const firstLink = panel.querySelector('.c-nav__link');
+    firstLink?.focus();
+  } else {
+    toggle.focus();
+  }
   };
 
   const closeMenu = () => setState(false);
@@ -35,11 +42,14 @@ export function initHeader(root = document) {
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') closeMenu();
+    if (event.key === 'Escape') {
+      closeMenu();
+      toggle.focus(); // Escape sonrası odağı geri ver
+    }
   });
 
   media.addEventListener('change', (event) => {
-    if (event.matches) closeMenu();
+    if (event.matches) closeMenu(); 
   });
 
   document.addEventListener('click', (event) => {
@@ -51,4 +61,5 @@ export function initHeader(root = document) {
 
   setState(false);
 }
+
 
